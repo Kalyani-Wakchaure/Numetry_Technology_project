@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Development Training</title>
+</head>
+<body>
+    <div style="text-align: center; padding: 20px; background-color: #f8f9fa;">
+        <img src="{{ url_for('static', filename='images/flag.png') }}" alt="India Flag" style="height: 50px;">
+        <h1 style="font-size: 2.5rem; font-weight: bold;">Software Development Training</h1>
+        <p style="font-size: 1.1rem;">3RI Technologies is a Leading Online/classroom Training Provider since 2010 for Software Development Courses in Pune. It is one of the best Online / Classroom Training Institute, which provides High-Quality Industry Level Training with Real Time Projects. 3RI Technologies is ISO 9001:2015 certified company imparting IT training from basic to advanced technologies.
+
+            3RI has specially designed Job Oriented Programme for “Freshers” and “Job Seekers.” We provide training by working professionals who are having 8-10 years of industry experience, who guide the candidate with the best knowledge and work culture of most IT companies. The training would be accompanied by live project and placement support, which makes the candidates ready to be absorbed in the industry.
+            
+            </p>
+        <div style="background-color: #e8c55b; padding: 10px; border-radius: 5px; display: inline-block; margin: 20px 0; font-size: 1.2rem;">
+            40% Off Limited Time Offer
+        </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; padding: 20px;">
+        {% for methodology in methodologies %}
+        <div style="flex: 1; min-width: 200px; max-width: 300px; margin: 10px; text-align: center; border: 1px solid #ddd; border-radius: 10px; padding: 20px; background-color: #fff;">
+            <img src="{{ url_for('static', filename='images/' ~ methodology.image) }}" alt="{{ methodology.title }}" style="height: 100px;">
+            <h3 style="font-size: 1.2rem; margin: 10px 0;">{{ methodology.title }}</h3>
+            <p style="font-size: 1rem; color: #777;">{{ methodology.id }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

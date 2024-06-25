@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Enter OTP{% endblock %}
+{% block content %}
+    <h2>Enter OTP</h2>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.otp.label }}<br>
+            {{ form.otp(size=32) }}<br>
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+{% endblock %}
